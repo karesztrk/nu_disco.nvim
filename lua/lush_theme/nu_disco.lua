@@ -236,7 +236,7 @@ local theme = lush(function(injected_functions)
 
     Underlined     { gui = "underline" }, -- Text that stands out, HTML links
     -- Ignore         { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
-    Error          { fg = red_dark }, -- Any erroneous construct
+    Error          { fg = red_light }, -- Any erroneous construct
     Todo           { fg = grey_5, bg = orange_dark, gui = 'bold'}, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client and diagnostic system. Some
@@ -254,10 +254,10 @@ local theme = lush(function(injected_functions)
 
     -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
     --
-    -- DiagnosticError            { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticWarn             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticInfo             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticHint             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticError            { fg = red_light } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticWarn             { fg = orange_light } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticInfo             { fg = teal_light } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticHint             { fg = pink_light } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
@@ -402,7 +402,26 @@ local theme = lush(function(injected_functions)
     GitSignsDeleteLn { DiffDelete },
     GitSignsAddInline { DiffTextAdded },
     GitSignsChangeInline { DiffTextChanged },
-    GitSignsDeleteInline { DiffTextDeleted },
+    GitSignsDeleteInline {DiffTextDeleted },
+
+    -- nvim-tree
+    NvimTreeSymlink  { fg = red_dark },
+    NvimTreeRootFolder { fg = grey_5 , bold = true },
+    NvimTreeFolderIcon { fg = blue_dark, bold = true },
+    NvimTreeFileIcon { fg = blue_dark },
+    NvimTreeExecFile { fg = green_light, bold = true },
+    NvimTreeOpenedFile { fg = red_light, bold = true },
+    NvimTreeSpecialFile { fg = grey_5, bold = true, underline = true },
+    NvimTreeImageFile { fg = purple_lighter },
+    NvimTreeIndentMarker { fg = grey_40 },
+    NvimTreeGitDirty { fg = teal_light },
+    NvimTreeGitStaged { fg = orange_light },
+    -- NvimTreeGitMerge { fg = palette.neutral_purple },
+    -- NvimTreeGitRenamed { fg = palette.neutral_purple },
+    NvimTreeGitNew { fg = green_light },
+    NvimTreeGitDeleted { fg = red_light },
+    NvimTreeWindowPicker { bg = blue_darker },
+    NvimTreeFolderName { fg = grey_5 },
 }
 end)
 
