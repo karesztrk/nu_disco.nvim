@@ -140,7 +140,7 @@ local theme = lush(function(injected_functions)
     DiffChange   { DiffLineChanged }, -- Diff mode: Changed line |diff.txt|
     DiffDelete   { DiffLineDeleted }, -- Diff mode: Deleted line |diff.txt|
     DiffText     { DiffTextChanged }, -- Diff mode: Changed text within a changed line |diff.txt|
-    EndOfBuffer  { bg = grey_100 }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
+    EndOfBuffer  { fg = grey_40 }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { fg = red_dark  }, -- Cursor in a focused terminal
     -- TermCursorNC { }, -- Cursor in an unfocused terminal
     ErrorMsg     { bg = red_light, fg = white }, -- Error messages on the command line
@@ -227,14 +227,13 @@ local theme = lush(function(injected_functions)
     Structure      { Type }, --   struct, union, enum, etc.
     Typedef        { Type }, --   A typedef
 
-    Special        { fg = teal_light }, -- (*) Any special symbol
-    SpecialChar    { Special }, --   Special character in a constant
-    Tag            { fg = red_light }, --   You can use CTRL-] on this
-    Delimiter      { fg = yellow_dark  }, --   Character that needs attention
-    SpecialComment { Special }, --   Special things inside a comment (e.g. '\n')
+    --Special        { fg = teal_light }, -- (*) Any special symbol
+    --SpecialChar    { Special }, --   Special character in a constant
+    Tag            { fg = orange_light }, --   You can use CTRL-] on this
+    Delimiter      { fg = pink_light  }, --   Character that needs attention
+    --SpecialComment { Special }, --   Special things inside a comment (e.g. '\n')
     Debug          { fg = red_dark }, --   Debugging statements
 
-    Underlined     { gui = "underline" }, -- Text that stands out, HTML links
     -- Ignore         { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
     Error          { fg = red_light }, -- Any erroneous construct
     Todo           { fg = grey_5, bg = orange_dark, gui = 'bold'}, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
@@ -299,7 +298,8 @@ local theme = lush(function(injected_functions)
     -- sym"@text.underline"    { }, -- Underlined
     -- sym"@text.todo"         { }, -- Todo
     -- sym"@comment"           { fg = grey_40 }, -- Comment
-    -- sym"@punctuation"       { }, -- Delimiter
+    sym"@punctuation"       { fg = grey_20 }, -- Delimiter
+    sym"@punctuation.bracket"       { fg = yellow_light }, -- Delimiter
     -- sym"@constant"          { }, -- Constant
     -- sym"@constant.builtin"  { }, -- Special
     -- sym"@constant.macro"    { }, -- Define
@@ -320,15 +320,17 @@ local theme = lush(function(injected_functions)
     -- sym"@method"            { }, -- Function
     -- sym"@field"             { }, -- Identifier
     sym"@property"          { fg = red_light }, -- Identifier
-    -- sym"@constructor"       { }, -- Special
+    sym"@constructor"       { fg = orange_light }, -- Special
     -- sym"@conditional"       { }, -- Conditional
     -- sym"@repeat"            { }, -- Repeat
     -- sym"@label"             { }, -- Label
     -- sym"@operator"          { }, -- Operator
-    -- sym"@keyword"           { }, -- Keyword
+    --sym"@keyword"           { }, -- Keyword
+    sym"@keyword.operator"           { fg = grey_10 }, -- Keyword
     -- sym"@exception"         { }, -- Exception
-    -- sym"@variable"          { }, -- Identifier
-    sym"@type"              { }, -- Type
+    sym"@variable"          { fg = teal_light }, -- Identifier
+    sym"@type"              { fg = teal_light }, -- Type
+    -- sym"@type.builtin"      { fg = yellow_light }, -- Type
     -- sym"@type.definition"   { }, -- Typedef
     -- sym"@storageclass"      { }, -- StorageClass
     -- sym"@structure"         { }, -- Structure
@@ -336,7 +338,9 @@ local theme = lush(function(injected_functions)
     sym"@include"           { fg = purple_lighter, gui = "italic" }, -- Include
     -- sym"@preproc"           { }, -- PreProc
     -- sym"@debug"             { }, -- Debug
-    sym"@tag"               { fg = red_light }, -- Tag
+    sym"@tag"                { fg = blue_light }, -- Tag
+    sym"@tag.delimiter"      { fg = grey_10 }, -- Tag delimiter
+    sym"@tag.attribute"      { fg = blue_light }, -- Tag attribute
 
   -- Telescope
     TelescopeBorder { fg = pink_light },
