@@ -410,7 +410,7 @@ local theme = lush(function(injected_functions)
 
     -- nvim-tree
     NvimTreeSymlink  { fg = red_dark },
-    NvimTreeRootFolder { fg = grey_5 , bold = true },
+    NvimTreeRootFolder { fg = grey_20 , bold = true },
     NvimTreeFolderIcon { fg = blue_dark, bold = true },
     NvimTreeFileIcon { fg = blue_dark },
     NvimTreeExecFile { fg = green_light, bold = true },
@@ -425,7 +425,16 @@ local theme = lush(function(injected_functions)
     NvimTreeGitNew { fg = green_light },
     NvimTreeGitDeleted { fg = red_light },
     NvimTreeWindowPicker { bg = blue_darker },
-    NvimTreeFolderName { fg = grey_5 },
+    NvimTreeFolderName { fg = grey_20 },
+    NvimTreeOpenedFolderName { NvimTreeFolderName },
+    -- NvimTreeFileDirty {}
+    -- NvimTreeFileStaged {}
+    -- NvimTreeFileMerge {}
+    -- NvimTreeFileRenamed {}
+    -- NvimTreeFileNew {}
+    -- NvimTreeFileDeleted {}
+    -- NvimTreeFileIgnored {}
+    NvimTreeCursorLine { bg = grey_60 }
 }
 end)
 
