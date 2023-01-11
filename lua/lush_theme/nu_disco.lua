@@ -52,6 +52,7 @@ local grey_90 = hsl('#180D2A')
 local grey_80 = hsl'#231934'
 local grey_60 = hsl('#322941')
 local grey_40 = hsl('#4E465B')
+local grey_30 = hsl('#BDB7BD')
 local grey_20 = hsl('#E7E4E7')
 local grey_10 = hsl('#ECE9EC')
 local grey_5 = hsl('#F8F7F8')
@@ -196,7 +197,7 @@ local theme = lush(function(injected_functions)
     --
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Comment        { fg = grey_40, bg = grey_100 }, -- Any comment
+    Comment        { fg = grey_30 }, -- Any comment
 
     Constant       { fg = teal_light }, -- (*) Any constant
     String         { fg = green_light }, --   A string constant: "this is a string"
