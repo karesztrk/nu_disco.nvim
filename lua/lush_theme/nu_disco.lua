@@ -435,7 +435,25 @@ local theme = lush(function(injected_functions)
     -- NvimTreeFileNew {}
     -- NvimTreeFileDeleted {}
     -- NvimTreeFileIgnored {}
-    NvimTreeCursorLine { bg = grey_60 }
+    NvimTreeCursorLine { bg = grey_60 },
+
+    -- Notify
+    NotifyBackground { bg = grey_100 },
+    NotifyERRORBorder { fg = pink_dark },
+    NotifyWARNBorder { fg = orange_dark },
+    NotifyINFOBorder { fg = blue_dark },
+    NotifyDEBUGBorder { fg = grey_20 },
+    NotifyTRACEBorder { fg = purple_light },
+    NotifyERRORIcon { fg = pink_dark },
+    NotifyWARNIcon { fg = orange_dark },
+    NotifyINFOIcon { fg = blue_dark },
+    NotifyDEBUGIcon { fg = grey_20 },
+    NotifyTRACEIcon { fg = purple_light },
+    NotifyERRORTitle { fg = pink_dark },
+    NotifyWARNTitle { fg = orange_dark },
+    NotifyINFOTitle { fg = blue_dark },
+    NotifyDEBUGTitle { fg = grey_20 },
+    NotifyTRACETitle { fg = purple_light },
   }
 end)
 
