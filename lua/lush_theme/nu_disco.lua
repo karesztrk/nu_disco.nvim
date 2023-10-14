@@ -454,6 +454,14 @@ local theme = lush(function(injected_functions)
     NotifyINFOTitle { fg = blue_dark },
     NotifyDEBUGTitle { fg = grey_20 },
     NotifyTRACETitle { fg = purple_light },
+
+    -- Dashboard
+    DashboardHeader { fg = pink_light },
+    DashboardFooter { fg = grey_30 },
+    DashboardDesc { fg = teal_light },
+    DashboardKey { fg = green_light },
+    DashboardIcon { fg = purple_lighter },
+    DashboardShortCut { fg = blue_light }
   }
 end)
 
