@@ -1,5 +1,5 @@
-A Lush Theme for Neovim.
-===
+# Nu Disco
 
-See: http://git.io/lush.nvim for more information on Lush and a helper script
-to setup your repo clone.
+> A VSCode theme that boogies. 💃🕺
+
+This theme is based on https://github.com/dbanksdesign/nu-disco-vscode-theme
