@@ -109,12 +109,12 @@ local theme = lush(function(injected_functions)
   local sym = injected_functions.sym
   return {
     -- Git diff
-    DiffTextAdded { bg = green_light },
-    DiffTextDeleted { bg = red_light },
-    DiffTextChanged { bg = teal_light },
-    DiffLineAdded { bg = green_light },
-    DiffLineDeleted { bg = red_light },
-    DiffLineChanged { bg = teal_light },
+    DiffTextAdded { bg = green_light, fg = grey_90 },
+    DiffTextDeleted { bg = red_light, fg = grey_90 },
+    DiffTextChanged { bg = teal_light, fg = grey_90 },
+    DiffLineAdded { bg = green_light, fg = grey_90 },
+    DiffLineDeleted { bg = red_light, fg = grey_90 },
+    DiffLineChanged { bg = teal_light, fg = grey_90 },
 
     GutterGitModified { fg = teal_light },
     GutterGitAdded { fg = green_light },
@@ -144,10 +144,10 @@ local theme = lush(function(injected_functions)
     EndOfBuffer { fg = grey_40 },   -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { fg = red_dark  }, -- Cursor in a focused terminal
     -- TermCursorNC { }, -- Cursor in an unfocused terminal
-    ErrorMsg { bg = red_light, fg = white },                  -- Error messages on the command line
+    ErrorMsg { bg = red_light, fg = grey_90 },                  -- Error messages on the command line
     VertSplit { fg = grey_40 },                               -- Column separating vertically split windows
-    Folded { bg = green_dark },                               -- Line used for closed folds
-    FoldColumn { bg = green_darker },                         -- 'foldcolumn'
+    Folded { bg = blue_darker },                               -- Line used for closed folds
+    FoldColumn { bg = blue_darker },                         -- 'foldcolumn'
     SignColumn { bg = grey_100 },                             -- Column where |signs| are displayed
     IncSearch { bg = grey_40 },                               -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
@@ -456,7 +456,7 @@ local theme = lush(function(injected_functions)
     NotifyTRACETitle { fg = purple_light },
 
     -- Dashboard
-    DashboardHeader { fg = pink_light },
+    DashboardHeader { fg = teal_light },
     DashboardFooter { fg = grey_30 },
     DashboardDesc { fg = teal_light },
     DashboardKey { fg = green_light },
