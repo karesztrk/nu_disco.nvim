@@ -153,7 +153,7 @@ local theme = lush(function(injected_functions)
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     LineNr { fg = grey_40 },                                  -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { fg = grey_20 },                            -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen { bg = blue_darker, gui = "bold, underline" }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen { bg = blue_darker, fg = purple_light, gui = "bold, underline" }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg { fg = grey_5 },                                  -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -461,7 +461,10 @@ local theme = lush(function(injected_functions)
     DashboardDesc { fg = teal_light },
     DashboardKey { fg = green_light },
     DashboardIcon { fg = teal_lighter },
-    DashboardShortCut { fg = blue_light }
+    DashboardShortCut { fg = blue_light },
+
+    -- LazyGit
+    FolatBorder { fg = grey_30 }
   }
 end)
 
