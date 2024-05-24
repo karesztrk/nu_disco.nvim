@@ -135,7 +135,7 @@ local theme = lush(function(injected_functions)
     -- lCursor      { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- Like Cursor, but used when in IME mode |CursorIM|
     CursorColumn { bg = grey_100 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine { bg = grey_100 },   -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLine { bg = grey_80 },   -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory { fg = grey_20 },     -- Directory names (and other special names in listings)
     DiffAdd { DiffLineAdded },      -- Diff mode: Added line |diff.txt|
     DiffChange { DiffLineChanged }, -- Diff mode: Changed line |diff.txt|
@@ -314,7 +314,7 @@ local theme = lush(function(injected_functions)
     -- sym"@character"         { }, -- Character
     -- sym"@character.special" { }, -- SpecialChar
     -- sym"@number"            { }, -- Number
-    -- sym"@boolean"           { }, -- Boolean
+    sym"@boolean"           { fg = green_light }, -- Boolean
     -- sym"@float"             { }, -- Float
     -- sym"@function"          { }, -- Function
     -- sym"@function.builtin"  { }, -- Special
@@ -322,7 +322,7 @@ local theme = lush(function(injected_functions)
     -- sym"@parameter"         { }, -- Identifier
     -- sym"@method"            { }, -- Function
     -- sym"@field"             { }, -- Identifier
-    sym "@property" { fg = red_light },       -- Identifier
+    sym "@property" { fg = pink_light },       -- Identifier
     sym "@constructor" { fg = orange_light }, -- Special
     -- sym"@conditional"       { }, -- Conditional
     -- sym"@repeat"            { }, -- Repeat
@@ -466,7 +466,7 @@ local theme = lush(function(injected_functions)
     DashboardShortCut { fg = blue_light },
 
     -- LazyGit
-    FolatBorder { fg = grey_30 }
+    FloatBorder { fg = grey_30 }
   }
 end)
 
