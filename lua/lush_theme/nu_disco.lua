@@ -179,8 +179,8 @@ local theme = lush(function(injected_functions)
     TabLine { fg = grey_20, bg = grey_60 },            -- Tab pages line, not active tab page label
     TabLineFill { fg = 'NONE', bg = grey_60 },         -- Tab pages line, where there are no labels
     TabLineSel { fg = white, bg = grey_100 },          -- Tab pages line, active tab page label
-    Title { fg = blue_light, gui = 'bold' },           -- Titles for output from ":set all", ":autocmd" etc.
-    Visual { bg = grey_40 },                           -- Visual mode selection
+    Title { fg = blue_light },           -- Titles for output from ":set all", ":autocmd" etc.
+    -- Visual { bg = grey_40 },                           -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg { fg = grey_60, bg = yellow_light },    -- Warning messages
     Whitespace { fg = grey_60 },                       -- "nbsp", "space", "tab" and "trail" in 'listchars'
@@ -228,7 +228,7 @@ local theme = lush(function(injected_functions)
     Structure { Type },                --   struct, union, enum, etc.
     Typedef { Type },                  --   A typedef
 
-    --Special        { fg = teal_light }, -- (*) Any special symbol
+    Special        { fg = red_light }, -- (*) Any special symbol
     --SpecialChar    { Special }, --   Special character in a constant
     Tag { fg = orange_light },     --   You can use CTRL-] on this
     Delimiter { fg = pink_light }, --   Character that needs attention
@@ -253,21 +253,20 @@ local theme = lush(function(injected_functions)
     LspSignatureActiveParameter { bg = teal_darker, fg = white }, -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
     LspInlayHint { bg= grey_80, fg = grey_30, }, -- Highlight for inlay hints served by the LSP: type information, param name, etc.
 
-
     -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
     --
     DiagnosticError { fg = red_light },   -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticWarn { fg = orange_light }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticInfo { fg = teal_light },   -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticHint { fg = pink_light },   -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticHint { fg = orange_light },   -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
     -- DiagnosticVirtualTextHint  { } , -- Used for "Hint" diagnostic virtual text.
-    -- DiagnosticUnderlineError   { } , -- Used to underline "Error" diagnostics.
-    -- DiagnosticUnderlineWarn    { } , -- Used to underline "Warn" diagnostics.
-    -- DiagnosticUnderlineInfo    { } , -- Used to underline "Info" diagnostics.
-    -- DiagnosticUnderlineHint    { } , -- Used to underline "Hint" diagnostics.
+    DiagnosticUnderlineError   { gui = 'undercurl', sp = red_light } , -- Used to underline "Error" diagnostics.
+    DiagnosticUnderlineWarn    { gui = 'undercurl', sp = orange_light  } , -- Used to underline "Warn" diagnostics.
+    DiagnosticUnderlineInfo    { gui = 'undercurl', sp = teal_light } , -- Used to underline "Info" diagnostics.
+    DiagnosticUnderlineHint    { gui = 'undercurl', sp = orange_light} , -- Used to underline "Hint" diagnostics.
     -- DiagnosticFloatingError    { } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
     -- DiagnosticFloatingWarn     { } , -- Used to color "Warn" diagnostic messages in diagnostics float.
     -- DiagnosticFloatingInfo     { } , -- Used to color "Info" diagnostic messages in diagnostics float.
@@ -276,6 +275,7 @@ local theme = lush(function(injected_functions)
     -- DiagnosticSignWarn         { } , -- Used for "Warn" signs in sign column.
     -- DiagnosticSignInfo         { } , -- Used for "Info" signs in sign column.
     -- DiagnosticSignHint         { } , -- Used for "Hint" signs in sign column.
+    DiagnosticUnnecessary { fg = teal_darker },
 
     -- Tree-Sitter syntax groups.
     --
@@ -302,9 +302,9 @@ local theme = lush(function(injected_functions)
     -- sym"@text.todo"         { }, -- Todo
     -- sym"@comment"           { fg = grey_40 }, -- Comment
     sym "@punctuation" { fg = grey_20 },              -- Delimiter
-    sym "@punctuation.bracket" { fg = yellow_light }, -- Delimiter
+    -- sym "@punctuation.bracket" { fg = orange_lighter }, -- Delimiter
     -- sym"@constant"          { }, -- Constant
-    -- sym"@constant.builtin"  { }, -- Special
+    -- sym"@constant.builtin"  { fg = red_dark }, -- Special
     -- sym"@constant.macro"    { }, -- Define
     -- sym"@define"            { }, -- Define
     -- sym"@macro"             { }, -- Macro
@@ -322,16 +322,17 @@ local theme = lush(function(injected_functions)
     -- sym"@parameter"         { }, -- Identifier
     -- sym"@method"            { }, -- Function
     -- sym"@field"             { }, -- Identifier
-    sym "@property" { fg = pink_light },       -- Identifier
-    sym "@constructor" { fg = orange_light }, -- Special
+    sym "@property" { fg = teal_light },       -- Identifier
+    sym "@constructor" { fg = purple_lighter }, -- Special
     -- sym"@conditional"       { }, -- Conditional
     -- sym"@repeat"            { }, -- Repeat
     -- sym"@label"             { }, -- Label
     -- sym"@operator"          { }, -- Operator
     --sym"@keyword"           { }, -- Keyword
-    sym "@keyword.operator" { fg = grey_10 }, -- Keyword
+    sym "@keyword.operator" { fg = purple_lighter }, -- Keyword
     -- sym"@exception"         { }, -- Exception
     sym "@variable" { fg = teal_light },      -- Identifier
+    sym "@variable.builtin" { fg = yellow_lighter },      -- Identifier
     sym "@type" { fg = teal_light },          -- Type
     -- sym"@type.builtin"      { fg = yellow_light }, -- Type
     -- sym"@type.definition"   { }, -- Typedef
@@ -341,9 +342,33 @@ local theme = lush(function(injected_functions)
     sym "@include" { fg = purple_lighter, gui = "italic" }, -- Include
     -- sym"@preproc"           { }, -- PreProc
     -- sym"@debug"             { }, -- Debug
+    
+    -- tsx
     sym "@tag" { fg = blue_light },           -- Tag
     sym "@tag.delimiter" { fg = grey_10 },    -- Tag delimiter
     sym "@tag.attribute" { fg = blue_light }, -- Tag attribute
+    sym "@tag.tsx" { fg = red_dark },
+    sym "@constant.builtin.tsx" { fg = purple_lighter },
+    sym "@tag.delimiter.tsx" { fg = pink_lighter },
+    sym "@tag.builtin.tsx" { fg = red_light },
+    sym "@keyword.conditional.ternary.tsx" { fg = grey_10 },
+    sym "@lsp.type.interface.typescriptreact" { fg = yellow_light },
+
+    -- ts
+    sym "@type.typescript" { fg = teal_light },
+    sym "@type.builtin.typescript" { fg = purple_lighter },
+    sym "@lsp.type.class.typescript" { fg = orange_light },
+    sym "@lsp.type.interface.typescript" { fg = purple_lighter },
+    sym "@constant.builtin.typescript" { fg = purple_lighter },
+
+    --js
+    sym "@lsp.typemod.property.declaration.javascript" { fg = pink_light },
+    sym "@lsp.mod.readonly.javascript" { fg = teal_light },
+    sym "@lsp.mod.defaultLibrary.javascript" { fg = teal_light },
+
+
+    --md
+    sym "@nospell.markdown_inline" { fg = teal_light },
 
     -- Telescope
     TelescopeBorder { fg = pink_light },
