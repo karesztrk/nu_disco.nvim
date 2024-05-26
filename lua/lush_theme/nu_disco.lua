@@ -347,12 +347,13 @@ local theme = lush(function(injected_functions)
     sym "@tag" { fg = blue_light },           -- Tag
     sym "@tag.delimiter" { fg = grey_10 },    -- Tag delimiter
     sym "@tag.attribute" { fg = blue_light }, -- Tag attribute
-    sym "@tag.tsx" { fg = red_dark },
+    sym "@tag.tsx" { fg = orange_light },
     sym "@constant.builtin.tsx" { fg = purple_lighter },
     sym "@tag.delimiter.tsx" { fg = pink_lighter },
     sym "@tag.builtin.tsx" { fg = red_light },
     sym "@keyword.conditional.ternary.tsx" { fg = grey_10 },
     sym "@lsp.type.interface.typescriptreact" { fg = yellow_light },
+    sym "@lsp.mod.declaration.typescriptreact" { fg = teal_light },
 
     -- ts
     sym "@type.typescript" { fg = teal_light },
@@ -361,14 +362,39 @@ local theme = lush(function(injected_functions)
     sym "@lsp.type.interface.typescript" { fg = purple_lighter },
     sym "@constant.builtin.typescript" { fg = purple_lighter },
 
-    --js
+    -- js
     sym "@lsp.typemod.property.declaration.javascript" { fg = pink_light },
     sym "@lsp.mod.readonly.javascript" { fg = teal_light },
     sym "@lsp.mod.defaultLibrary.javascript" { fg = teal_light },
 
+    -- css
+    sym "@tag.css" { fg = red_light },
+    sym "@type.css" { fg = yellow_light },
+    sym "@attribute.css" { fg = green_lighter },
+    sym "@tag.attribute.css" { fg = green_lighter },
+    sym "@number.css" { fg = pink_light },
+    sym "@number.float.css" { fg = pink_light },
+    sym "@string.css" { fg = pink_light },
+    sym "@property.css" { fg = grey_10 },
+ 
+    -- scss
+    sym "@tag.scss" { fg = red_light },
+    sym "@type.scss" { fg = yellow_light },
+    sym "@attribute.scss" { fg = green_lighter },
+    sym "@tag.attribute.scss" { fg = green_lighter },
+    sym "@number.scss" { fg = pink_light },
+    sym "@number.float.scss" { fg = pink_light },
+    sym "@string.scss" { fg = pink_light },
+    sym "@property.scss" { fg = grey_10 },
+    sym "@constant.scss" { fg = orange_light },
+
+    -- astro
+    sym "@tag.astro" { fg = red_light },
+    sym "@punctuation.special.astro" { fg = grey_10 },
 
     --md
     sym "@nospell.markdown_inline" { fg = teal_light },
+    sym "@markup.link.label.markdown_inline" { fg = green_light },
 
     -- Telescope
     TelescopeBorder { fg = pink_light },
