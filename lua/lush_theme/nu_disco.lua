@@ -361,6 +361,7 @@ local theme = lush(function(injected_functions)
     sym "@lsp.type.class.typescript" { fg = orange_light },
     sym "@lsp.type.interface.typescript" { fg = purple_lighter },
     sym "@constant.builtin.typescript" { fg = purple_lighter },
+    sym "@lsp.typemod.property.declaration.typescript" { fg = pink_light },
 
     -- js
     sym "@lsp.typemod.property.declaration.javascript" { fg = pink_light },
