@@ -395,7 +395,16 @@ local theme = lush(function(injected_functions)
 
     --md
     sym "@nospell.markdown_inline" { fg = teal_light },
-    sym "@markup.link.label.markdown_inline" { fg = green_light },
+    RenderMarkdownH1Bg { fg = teal_light },
+    RenderMarkdownH2Bg { fg = green_light },
+    RenderMarkdownH3Bg { fg = lime_light },
+    RenderMarkdownH4Bg { fg = orange_light },
+    RenderMarkdownH5Bg { fg = pink_light },
+    RenderMarkdownH6Bg { fg = red_light },
+
+    -- yaml
+    sym "@property.yaml" { fg = orange_light },
+    sym "@type.yaml" { fg = purple_lighter },
 
     -- Telescope
     TelescopeBorder { fg = pink_light },
