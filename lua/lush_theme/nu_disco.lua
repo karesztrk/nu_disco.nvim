@@ -526,7 +526,7 @@ local theme = lush(function(injected_functions)
     DashboardIcon { fg = teal_lighter },
     DashboardShortCut { fg = blue_light },
 
-    -- Snacks
+    -- Snacks dashboard
     SnacksDashboardNormal { fg = teal_light },
     SnacksDashboardDesc { fg = grey_20 },
     SnacksDashboardFile { fg = grey_30 },
@@ -539,7 +539,15 @@ local theme = lush(function(injected_functions)
     SnacksDashboardTitle { fg = teal_light },
 
     -- LazyGit
-    FloatBorder { fg = grey_30 }
+    FloatBorder { fg = grey_30 },
+
+    -- Snacks indent
+    SnacksIndent { fg = grey_60  },
+    SnacksIndentScope { fg = teal_darker },
+    SnacksIndent1 { fg = red_darker  },
+    SnacksIndent2 { fg = red_dark  },
+    SnacksIndent3 { fg = red_light  },
+    SnacksIndent4 { fg = red_lighter  },
   }
 end)
 
