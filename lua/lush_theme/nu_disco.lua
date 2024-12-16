@@ -548,6 +548,22 @@ local theme = lush(function(injected_functions)
     SnacksIndent2 { fg = red_dark  },
     SnacksIndent3 { fg = red_light  },
     SnacksIndent4 { fg = red_lighter  },
+
+		-- Fzf
+		FzfLuaBorder { fg = grey_30 },
+    FzfLuaCursor { IncSearch },
+    FzfLuaDirPart { fg = teal_darker },
+    FzfLuaFilePart { Normal },
+    -- FzfLuaFzfCursorLine { Visual },
+    FzfLuaFzfPointer { fg = pink_dark },
+    FzfLuaFzfSeparator { fg = teal_light },
+    FzfLuaHeaderBind { fg = pink_light },
+    FzfLuaHeaderText { fg = teal_dark },
+    FzfLuaPath { Directory },
+    FzfLuaPreviewTitle { Title },
+    FzfLuaTitle { Title },
+    FzfLuaFzfMatch { fg = pink_light },
+    FzfLuaFzfInfo { fg = teal_lighter },
   }
 end)
 
