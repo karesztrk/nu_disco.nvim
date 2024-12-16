@@ -562,7 +562,7 @@ local theme = lush(function(injected_functions)
     FzfLuaPath { Directory },
     FzfLuaPreviewTitle { Title },
     FzfLuaTitle { Title },
-    FzfLuaFzfMatch { fg = pink_light },
+    FzfLuaFzfMatch { fg = teal_light },
     FzfLuaFzfInfo { fg = teal_lighter },
   }
 end)
