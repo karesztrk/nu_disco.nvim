@@ -549,12 +549,18 @@ local theme = lush(function(injected_functions)
     SnacksIndent3 { fg = red_light  },
     SnacksIndent4 { fg = red_lighter  },
 
+    -- Snacks picker
+    SnacksPickerMatch { fg = teal_light },
+    SnacksPickerBorder { fg = grey_30 },
+    SnacksPickerDir { fg = teal_darker },
+    SnacksPickerPrompt { fg = pink_dark  },
+    SnacksPickerInputBorder { fg = teal_light  },
+
 		-- Fzf
 		FzfLuaBorder { fg = grey_30 },
     FzfLuaCursor { IncSearch },
     FzfLuaDirPart { fg = teal_darker },
     FzfLuaFilePart { Normal },
-    -- FzfLuaFzfCursorLine { Visual },
     FzfLuaFzfPointer { fg = pink_dark },
     FzfLuaFzfSeparator { fg = teal_light },
     FzfLuaHeaderBind { fg = pink_light },
@@ -564,6 +570,7 @@ local theme = lush(function(injected_functions)
     FzfLuaTitle { Title },
     FzfLuaFzfMatch { fg = teal_light },
     FzfLuaFzfInfo { fg = teal_lighter },
+
   }
 end)
 
