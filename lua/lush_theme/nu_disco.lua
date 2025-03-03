@@ -571,6 +571,9 @@ local theme = lush(function(injected_functions)
     FzfLuaFzfMatch { fg = teal_light },
     FzfLuaFzfInfo { fg = teal_lighter },
 
+    -- Mini
+    MiniFilesTitleFocused { fg = teal_light },
+    MiniFilesBorderModified { fg = pink_light },
   }
 end)
 
