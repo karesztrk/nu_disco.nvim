@@ -160,7 +160,7 @@ local theme = lush(function(injected_functions)
     MoreMsg { fg = grey_5 },               -- |more-prompt|
     NonText { fg = grey_20 },              -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal { fg = grey_5, bg = grey_100 }, -- Normal text
-    -- NormalFloat  { }, -- Normal text in floating windows.
+    -- NormalFloat  { fg = gray_20 }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows/
     Pmenu { bg = grey_80 },                            -- Popup menu: Normal item.
     PmenuSel { fg = white, bg = blue_dark },           -- Popup menu: Selected item.
@@ -314,7 +314,7 @@ local theme = lush(function(injected_functions)
     -- sym"@character"         { }, -- Character
     -- sym"@character.special" { }, -- SpecialChar
     -- sym"@number"            { }, -- Number
-    sym"@boolean"           { fg = green_light }, -- Boolean
+    sym "@boolean"           { fg = green_light }, -- Boolean
     -- sym"@float"             { }, -- Float
     -- sym"@function"          { }, -- Function
     -- sym"@function.builtin"  { }, -- Special
@@ -574,8 +574,24 @@ local theme = lush(function(injected_functions)
     -- Mini
     MiniFilesTitleFocused { fg = teal_light },
     MiniFilesBorderModified { fg = pink_light },
+
+    -- Blink
+    BlinkCmpGhostText { Comment },
+    BlinkCmpLabel { fg = grey_30 },
+    BlinkCmpLabelMatch { gui = "underline" },
+    BlinkCmpLabelDeprecated { fg = grey_40, strikethrough = true },
+    BlinkCmpMenuBorder {fg = teal_darker},
+    BlinkCmpSignatureHelp {fg = purple_lighter },
+    BlinkCmpSignatureHelpBorder { fg = teal_darker },
+    BlinkCmpKind { Normal },
+    BlinkCmpKindCodeium { fg = teal_light },
+    BlinkCmpKindSupermaven { BlinkCmpKindCodeium },
+    BlinkCmpKindTabNine { BlinkCmpKindCodeium },
+    BlinkCmpKindCopilot { BlinkCmpKindCodeium },
+    BlinkCmpKindSnippet { fg = lime_light },
   }
 end)
+
 
 -- Return our parsed theme for extension or use elsewhere.
 return theme
