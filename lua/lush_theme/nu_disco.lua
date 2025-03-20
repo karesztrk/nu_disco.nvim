@@ -579,6 +579,7 @@ local theme = lush(function(injected_functions)
     BlinkCmpGhostText { Comment },
     BlinkCmpLabel { fg = grey_30 },
     BlinkCmpLabelMatch { gui = "underline" },
+    BlinkCmpMenuIcon { fg = orange_light },
     BlinkCmpLabelDeprecated { fg = grey_40, strikethrough = true },
     BlinkCmpMenuBorder {fg = teal_darker},
     BlinkCmpSignatureHelp {fg = purple_lighter },
