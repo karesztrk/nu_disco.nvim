@@ -1,3 +1,5 @@
+local Util = require("nu_disco.util")
+
 local M = {}
 
 -- Color definitions
@@ -251,12 +253,21 @@ function M.setup()
 
 	-- md
 	hi("@nospell.markdown_inline", { fg = colors.teal_light })
-	hi("RenderMarkdownH1Bg", { fg = colors.teal_light })
-	hi("RenderMarkdownH2Bg", { fg = colors.green_light })
-	hi("RenderMarkdownH3Bg", { fg = colors.lime_light })
-	hi("RenderMarkdownH4Bg", { fg = colors.orange_light })
-	hi("RenderMarkdownH5Bg", { fg = colors.pink_light })
-	hi("RenderMarkdownH6Bg", { fg = colors.red_light })
+
+	local rainbow = {
+		colors.teal_light,
+		colors.green_light,
+		colors.lime_light,
+		colors.orange_light,
+		colors.pink_light,
+		colors.red_light,
+	}
+
+	for i, color in ipairs(rainbow) do
+		hi("RenderMarkdownH" .. i, { fg = color })
+		hi("RenderMarkdownH" .. i .. "Bg", { bg = Util.blend_bg(color, 0.15, colors.grey_100) })
+		hi("@markup.heading." .. i .. ".markdown", { fg = color })
+	end
 
 	-- yaml
 	hi("@property.yaml", { fg = colors.orange_light })
