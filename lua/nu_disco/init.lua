@@ -269,6 +269,9 @@ function M.setup()
 		hi("@markup.heading." .. i .. ".markdown", { fg = color })
 	end
 
+	hi("@markup.list.checked", { fg = colors.teal_light })
+	hi("@markup.list.unchecked", { fg = colors.blue_light })
+
 	-- yaml
 	hi("@property.yaml", { fg = colors.orange_light })
 	hi("@type.yaml", { fg = colors.purple_lighter })
