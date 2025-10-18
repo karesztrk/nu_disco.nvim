@@ -272,6 +272,10 @@ function M.setup()
 	hi("@markup.list.checked", { fg = colors.teal_light })
 	hi("@markup.list.unchecked", { fg = colors.blue_light })
 
+	hi("@markup.raw.markdown_inline", { fg = colors.blue_light, bg = colors.grey_80 })
+	hi("RenderMarkdownCodeInline", { link = "@markup.raw.markdown_inline" })
+	hi("RenderMarkdownCode", { bg = colors.grey_80 })
+
 	-- yaml
 	hi("@property.yaml", { fg = colors.orange_light })
 	hi("@type.yaml", { fg = colors.purple_lighter })
