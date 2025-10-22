@@ -136,7 +136,7 @@ function M.setup()
 	hi("WildMenu", { link = "PmenuSel" })
 
 	-- Common vim syntax groups
-	hi("Comment", { fg = colors.grey_30 })
+	hi("Comment", { fg = colors.grey_20 })
 
 	hi("Constant", { fg = colors.teal_light })
 	hi("String", { fg = colors.green_light })
@@ -200,6 +200,8 @@ function M.setup()
 	hi("@variable.builtin", { fg = colors.yellow_lighter })
 	hi("@type", { fg = colors.teal_light })
 	hi("@include", { fg = colors.purple_lighter, italic = true })
+	hi("@comment", { link = "Comment" })
+	hi("@comment.documentation", { fg = colors.grey_30 })
 
 	-- tsx
 	hi("@tag", { fg = colors.blue_light })
