@@ -89,7 +89,7 @@ function M.setup()
 	hi("GutterGitDeleted", { fg = colors.red_light })
 
 	-- Neovim highlight groups
-	hi("ColorColumn", { fg = colors.white, bg = colors.grey_100 })
+	hi("ColorColumn", { bg = colors.grey_90 })
 	hi("Conceal", { fg = colors.grey_20 })
 	hi("Cursor", { fg = colors.teal_light })
 	hi("CursorColumn", { bg = colors.grey_100 })
