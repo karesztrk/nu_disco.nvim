@@ -458,6 +458,13 @@ function M.setup()
   hi("BlinkCmpKindTabNine", { link = "BlinkCmpKindCodeium" })
   hi("BlinkCmpKindCopilot", { link = "BlinkCmpKindCodeium" })
   hi("BlinkCmpKindSnippet", { fg = colors.lime_light })
+
+  hi("Pmenu", { fg = colors.grey_20 })
+  hi("PmenuMatch", { fg = colors.grey_5, bold = true })
+  hi("PmenuMatchSel", { fg = colors.grey_5, bold = true })
+  hi("PmenuSbar", { bg = colors.grey_90 })
+  hi("PmenuSel", { bg = colors.purple_lighter, fg = colors.grey_80 })
+  hi("PmenuThumb", { bg = colors.grey_30 })
 end
 
 return M
